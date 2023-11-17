@@ -1,4 +1,4 @@
-# BACKLOG
+# PRODUCT BACKLOG
 
  - Käyttäjä voi lisätä tägejä viitteisiin
  - Käyttäjä voi luoda BibTex-tiedoston tallenetuista viitteistään
