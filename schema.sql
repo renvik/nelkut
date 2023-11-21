@@ -16,7 +16,7 @@ CREATE TABLE inproceedings (
     user_id INTEGER REFERENCES users
 );
 
-CREATE TABLE article (
+CREATE TABLE articles (
     id SERIAL PRIMARY KEY,
     cite_id TEXT UNIQUE,
     author TEXT,
@@ -29,7 +29,7 @@ CREATE TABLE article (
     user_id INTEGER REFERENCES users
 );
 
-CREATE TABLE book (
+CREATE TABLE books (
     id SERIAL PRIMARY KEY,
     cite_id TEXT UNIQUE,
     author TEXT,
