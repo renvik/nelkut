@@ -21,5 +21,3 @@ def add_book_to_database(request):
 	keys = ["cite_id", "author", "title", "year", "publisher", "start_page", "end_page"]
 
 	__insert("books", keys, request)
-
-#    def validate_reference(self, reference):
