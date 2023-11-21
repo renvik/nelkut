@@ -22,7 +22,8 @@ CREATE TABLE article (
     journal TEXT,
     year INTEGER,
     volume INTEGER,
-    pages TEXT,
+    start_page INTEGER,
+    end_page INTEGER,
     user_id INTEGER REFERENCES users
 );
 
