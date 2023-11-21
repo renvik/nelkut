@@ -10,7 +10,7 @@ CREATE TABLE inproceedings (
     author TEXT,
     title TEXT,
     year INTEGER,
-    booktitle TEXT
+    booktitle TEXT,
     user_id INTEGER REFERENCES users
 );
 
@@ -22,7 +22,7 @@ CREATE TABLE article (
     journal TEXT,
     year INTEGER,
     volume INTEGER,
-    pages TEXT
+    pages TEXT,
     user_id INTEGER REFERENCES users
 );
 
