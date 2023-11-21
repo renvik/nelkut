@@ -1,32 +1,12 @@
 <!DOCTYPE html>
 <title>New Reference</title>
-<h3>New Reference</h3>
+Choose which type of reference to add:
+<br>
+<br>
 <form action="/add" method="POST" enctype="multipart/form-data">
-	Title:
-	<input type="text" name="title" required>
+	<input type="button" onclick="location.href='/add_inproceedings'" value="Add a reference to inproceedings">
 	<br><br>
-	Author:
-	<input type="text" name="author">
+	<input type="button" onclick="location.href='/add_article'" value="Add a reference to an article">
 	<br><br>
-	Year:
-	<input type="number" name="year">
-	<br><br>
-	Book title:
-	<input type="text" name="booktitle">
-	<br><br>
-	Journal:
-	<input type="text" name="Journal">
-	<br><br>
-	Publisher:
-	<input type="text" name="Publisher">
-	<br><br>
-	Pages:
-	<input type="number" name="first_page" size="8">
-	&nbsp;
-	&ndash;
-	&nbsp;
-	<input type="number" name="last_page" size="8">
-	<br><br>
-	<input type="submit" value="Save">
-	<input type="button" onclick="location.href='/'" value="Cancel">
+	<input type="button" onclick="location.href='/add_book'" value="Add a reference to a book">
 </form>
