@@ -1,6 +1,7 @@
 from flask import request, redirect, render_template
 from app import app
 import db
+import refservice
 
 @app.route("/")
 def index():
@@ -34,6 +35,7 @@ def add_book():
 		return render_template("add_book_reference.html")
 
 	# todo: add the stuff from request to the database
+	refservice.add_book_to_database(request)
 
 	return redirect("/")
 
