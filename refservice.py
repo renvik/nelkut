@@ -3,8 +3,8 @@ from sqlalchemy.sql import text
 
 def __insert(table_name, keys, request):
 	colon = ':'
-	sql = text(f"INSERT INTO {table_name} ({', '.join(__keys)}) VALUES ({', '.join(colon + key for key in __keys)})")
-	db.session.execute(sql, {key: request.form[key] for key in __keys})
+	sql = text(f"INSERT INTO {table_name} ({', '.join(keys)}) VALUES ({', '.join(colon + key for key in keys)})")
+	db.session.execute(sql, {key: request.form[key] for key in keys})
 	db.session.commit()
 
 def add_inproceeding_to_database(request):
