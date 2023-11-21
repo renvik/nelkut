@@ -8,5 +8,6 @@ def add_book_to_database(request):
 	colon = ':'
 	sql = text(f"INSERT INTO books ({', '.join(__keys)}) VALUES ({', '.join(colon + key for key in __keys)})")
 	db.session.execute(sql, {key: request.form[key] for key in __keys})
+	db.session.commit()
 
 #    def validate_reference(self, reference):
