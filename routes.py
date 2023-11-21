@@ -1,5 +1,6 @@
 from flask import request, redirect, render_template
 from app import app
+import db
 
 @app.route("/")
 def index():
@@ -16,5 +17,5 @@ def add():
 
 @app.route("/list")
 def list():
-
+	references = db.list_references()
 	return render_template("list_references.html")

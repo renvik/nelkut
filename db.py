@@ -7,8 +7,9 @@ db = SQLAlchemy(app)
 
 def list_references():
     sql = "SELECT * FROM book"
-    books = db.session.execute(text(sql))
+    books = db.session.execute(text(sql)).fetchall()
     sql = "SELECT * FROM article"
-    articles = db.session.execute(text(sql))
+    articles = db.session.execute(text(sql)).fetchall()
     sql = "SELECT * FROM inproceedings"
-    inproceedings = db.session.execute(text(sql))
+    inproceedings = db.session.execute(text(sql)).fetchall()
+    return books, articles, inproceedings
