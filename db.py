@@ -6,9 +6,9 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///nelkut"
 db = SQLAlchemy(app)
 
 def list_references():
-    sql = "SELECT * FROM book"
+    sql = "SELECT * FROM books"
     books = db.session.execute(text(sql)).fetchall()
-    sql = "SELECT * FROM article"
+    sql = "SELECT * FROM articles"
     articles = db.session.execute(text(sql)).fetchall()
     sql = "SELECT * FROM inproceedings"
     inproceedings = db.session.execute(text(sql)).fetchall()
