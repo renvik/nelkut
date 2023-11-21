@@ -1,8 +1,5 @@
 from flask import render_template
 from app import app
-from os import getenv
-from sqlalchemy.sql import text
-from flask_sqlalchemy import SQLAlchemy
 
 @app.route("/")
 def index():
@@ -14,4 +11,5 @@ def add():
 
 @app.route("/list")
 def list():
-	pass
+
+	return render_template("list_references.html")
