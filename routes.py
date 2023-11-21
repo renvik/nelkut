@@ -11,13 +11,13 @@ def index():
 def add():
 	return render_template("add_reference.html")
 
-@app.route("/add_inproceedings", methods=["GET", "POST"])
-def add_inproceedings():
+@app.route("/add_inproceeding", methods=["GET", "POST"])
+def add_inproceeding():
 	if request.method == "GET":
-		return render_template("add_inproceedings_reference.html")
+		return render_template("add_inproceeding_reference.html")
 
 	# todo: add the stuff from request to the database
-	refservice.add_inproceedings_to_database(request)
+	refservice.add_inproceeding_to_database(request)
 
 	return redirect("/")
 
