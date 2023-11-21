@@ -8,7 +8,7 @@ def __insert(table_name, keys, request):
 	db.session.commit()
 
 def add_inproceeding_to_database(request):
-	keys = ["cite_id", "title", "author", "year", "publisher", "start_page", "end_page"]
+	keys = ["cite_id", "author", "title", "year", "booktitle", "start_page", "end_page"]
 
 	__insert("inproceedings", keys, request)
 
