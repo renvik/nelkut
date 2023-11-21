@@ -8,3 +8,7 @@ def index():
 @app.route("/add")
 def add():
 	return render_template("add_reference.html")
+
+@app.route("/list")
+def list():
+	pass
