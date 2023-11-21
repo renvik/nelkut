@@ -1,5 +1,8 @@
 from flask import render_template
 from app import app
+from os import getenv
+from sqlalchemy.sql import text
+from flask_sqlalchemy import SQLAlchemy
 
 @app.route("/")
 def index():
