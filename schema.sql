@@ -11,6 +11,8 @@ CREATE TABLE inproceedings (
     title TEXT,
     year INTEGER,
     booktitle TEXT,
+    start_page INTEGER,
+    end_page INTEGER,
     user_id INTEGER REFERENCES users
 );
 
@@ -34,5 +36,7 @@ CREATE TABLE book (
     title TEXT,
     year INTEGER,
     publisher TEXT,
+    start_page INTEGER,
+    end_page INTEGER,
     user_id INTEGER REFERENCES users
 );
