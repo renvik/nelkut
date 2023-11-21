@@ -1,11 +1,11 @@
 CREATE TABLE users (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     username TEXT UNIQUE,
     password TEXT
 );
 
 CREATE TABLE inproceedings (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     cite_id TEXT UNIQUE,
     author TEXT,
     title TEXT,
@@ -15,7 +15,7 @@ CREATE TABLE inproceedings (
 );
 
 CREATE TABLE article (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     cite_id TEXT UNIQUE,
     author TEXT,
     title TEXT,
@@ -27,7 +27,7 @@ CREATE TABLE article (
 );
 
 CREATE TABLE book (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     cite_id TEXT UNIQUE,
     author TEXT,
     title TEXT,
