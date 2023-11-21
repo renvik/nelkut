@@ -17,6 +17,7 @@ def add_inproceedings():
 		return render_template("add_inproceedings_reference.html")
 
 	# todo: add the stuff from request to the database
+	refservice.add_inproceedings_to_database(request)
 
 	return redirect("/")
 
@@ -26,6 +27,7 @@ def add_article():
 		return render_template("add_article_reference.html")
 
 	# todo: add the stuff from request to the database
+	refservice.add_article_to_database(request)
 
 	return redirect("/")
 
