@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <title>References</title>
 {% for reference in references %}
-{{ reference }}
+{{reference.cite_id}}: {{ reference.title }}, {{ reference.author }}, {{ reference.year }}, {{ reference.publisher }}
+<hr>
+<br>
 {% endfor %}
