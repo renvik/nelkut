@@ -1,6 +1,7 @@
 # nelkut
-Ryhmä 4 OhTu miniprojekti
+![GHA workflow badge](https://github.com/EeroAnt/nelkut/workflows/CI/badge.svg)
 
+Ryhmä 4 OhTu miniprojekti
 # Backlog
 
 [Backlog](https://docs.google.com/spreadsheets/d/1923qVBaTEvUpGSOyh8lcoLwEM9oUUErB05xrt4Awjx4/edit#gid=1)
