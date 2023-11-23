@@ -44,4 +44,4 @@ def add_book():
 @app.route("/list")
 def list():
 	references = list_references()
-	return render_template("list_references.html")
+	return render_template("list_references.html" , references = references)
