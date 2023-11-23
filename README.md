@@ -1,2 +1,13 @@
 # nelkut
 Ryhmä 4 OhTu miniprojekti
+
+# Backlog
+
+[Backlog](https://docs.google.com/spreadsheets/d/1923qVBaTEvUpGSOyh8lcoLwEM9oUUErB05xrt4Awjx4/edit#gid=1)
+
+# Asennus
+1. Asenna PostgreSQL. PostgreSQL:n oman dokumentaation ohjeet löydät [täältä](https://www.postgresql.org/download/)
+2. Asenna riippuvuudet komennolla `poetry install`
+3. Repositorion juurikansiossa anna komento `psql < schema.sql`
+4. Käynnistä sovellus komennolla `flask run`
+
