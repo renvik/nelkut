@@ -1,15 +1,12 @@
 from db import db
 from sqlalchemy.sql import text
 
-def list_references():
+def list_references(books, articles, inproceedings):
     references = []
-    books = list_books()
     for i in books:
         references.append(i)
-    articles = list_articles()
     for i in articles:
         references.append(i)
-    inproceedings = list_inproceedings()
     for i in inproceedings:
         references.append(i)
     return references

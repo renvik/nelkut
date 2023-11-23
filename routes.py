@@ -1,6 +1,6 @@
 from flask import request, redirect, render_template
 from app import app
-from reference_list import list_references
+from reference_list import list_references, list_articles, list_books, list_inproceedings
 import refservice
 
 @app.route("/")
@@ -43,5 +43,8 @@ def add_book():
 
 @app.route("/list")
 def list():
-	references = list_references()
+	books = list_books()
+	articles = list_articles()
+	inproceedings = list_inproceedings()
+	references = list_references(books, articles, inproceedings)
 	return render_template("list_references.html" , references = references)
