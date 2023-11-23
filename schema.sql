@@ -11,10 +11,12 @@ CREATE TABLE inproceedings (
     title TEXT,
     year INTEGER,
     booktitle TEXT,
+    start_page INTEGER,
+    end_page INTEGER,
     user_id INTEGER REFERENCES users
 );
 
-CREATE TABLE article (
+CREATE TABLE articles (
     id SERIAL PRIMARY KEY,
     cite_id TEXT UNIQUE,
     author TEXT,
@@ -27,12 +29,14 @@ CREATE TABLE article (
     user_id INTEGER REFERENCES users
 );
 
-CREATE TABLE book (
+CREATE TABLE books (
     id SERIAL PRIMARY KEY,
     cite_id TEXT UNIQUE,
     author TEXT,
     title TEXT,
     year INTEGER,
     publisher TEXT,
+    start_page INTEGER,
+    end_page INTEGER,
     user_id INTEGER REFERENCES users
 );

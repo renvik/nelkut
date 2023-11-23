@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<title>New Reference</title>
+<h3>New Reference</h3>
+<form action="/add_article" method="POST" enctype="multipart/form-data">
+	Title:
+	<input type="text" name="title" required>
+	<br><br>
+	Author:
+	<input type="text" name="author">
+	<br><br>
+	Year:
+	<input type="number" name="year">
+	<br><br>
+	Journal:
+	<input type="text" name="journal">
+	<br><br>
+	Volume:
+	<input type="text" name="volume">
+	<br><br>
+	Pages:
+	<input type="number" name="start_page" size="8">
+	&nbsp;
+	&ndash;
+	&nbsp;
+	<input type="number" name="end_page" size="8">
+	<br><br>
+	Cite ID:
+	<input type="text" name="cite_id" required>
+	<br><br>
+	<input type="submit" value="Save">
+	<input type="button" onclick="location.href='/'" value="Cancel">
+</form>
