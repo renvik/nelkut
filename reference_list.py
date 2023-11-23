@@ -3,16 +3,28 @@ from sqlalchemy.sql import text
 
 def list_references():
     references = []
-    sql = "SELECT * FROM books"
-    books = db.session.execute(text(sql)).fetchall()
+    books = list_books()
     for i in books:
         references.append(i)
-    sql = "SELECT * FROM articles"
-    articles = db.session.execute(text(sql)).fetchall()
+    articles = list_articles()
     for i in articles:
         references.append(i)
-    sql = "SELECT * FROM inproceedings"
-    inproceedings = db.session.execute(text(sql)).fetchall()
+    inproceedings = list_inproceedings()
     for i in inproceedings:
         references.append(i)
     return references
+
+def list_books():
+    sql = "SELECT * FROM books"
+    books = db.session.execute(text(sql)).fetchall()
+    return books
+
+def list_articles():
+    sql = "SELECT * FROM articles"
+    articles = db.session.execute(text(sql)).fetchall()
+    return articles
+
+def list_inproceedings():
+    sql = "SELECT * FROM inproceedings"
+    inproceedings = db.session.execute(text(sql)).fetchall()
+    return inproceedings
