@@ -1,3 +1,6 @@
+CREATE DATABASE nelkut;
+\c nelkut;
+
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username TEXT UNIQUE,
