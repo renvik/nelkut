@@ -10,7 +10,7 @@ Ryhmä 4 OhTu miniprojekti
 1. Asenna PostgreSQL. PostgreSQL:n oman dokumentaation ohjeet löydät [täältä](https://www.postgresql.org/download/)
 2. Asenna riippuvuudet komennolla `poetry install`
 3. Repositorion juurikansiossa anna komento `psql < schema.sql`
-4. Käynnistä sovellus komennolla `flask run`
+4. Käynnistä sovellus komennolla `poetry run flask run`
 
 # Definition of done
 
