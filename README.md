@@ -15,3 +15,7 @@ Ryhmä 4 OhTu miniprojekti
 # Definition of done
 
 Määritellään valmiiksi tehty tarkoittamaan sitä, että vaatimus on analysoitu, suunniteltu, ohjelmoitu, testattu, testaus automatisoitu, dokumentoitu, integroitu muuhun ohjelmistoon ja viety tuotantoympäristöön.
+
+# Lisenssi
+
+Katso [LICENSE](https://github.com/EeroAnt/nelkut/blob/main/LICENSE)-tiedosto, josta löytyy tarkemmat tiedot lisenssioikeuksista ja rajoituksista (MIT)
