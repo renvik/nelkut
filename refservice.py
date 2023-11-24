@@ -21,17 +21,3 @@ def add_book_to_database(request):
 	keys = ["cite_id", "author", "title", "year", "publisher", "start_page", "end_page"]
 
 	__insert("books", keys, request)
-
-def validate_reference(keys, table_name, request):
-	new = tuple([request.form[key] for key in keys])
-	all = db.session.execute(text(f"SELECT * FROM {table_name}")).fetchall()
-	for reference in all:
-		if new == reference:
-			pass
-	pagecheck(request)
-	
-def pagecheck(request):
-	start_page = request.form["start_page"]
-	end_page = request.form["end_page"]
-	if end_page < start_page:
-		pass
