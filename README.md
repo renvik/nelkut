@@ -12,3 +12,6 @@ Ryhmä 4 OhTu miniprojekti
 3. Repositorion juurikansiossa anna komento `psql < schema.sql`
 4. Käynnistä sovellus komennolla `flask run`
 
+# Definition of done
+
+Määritellään valmiiksi tehty tarkoittamaan sitä, että vaatimus on analysoitu, suunniteltu, ohjelmoitu, testattu, testaus automatisoitu, dokumentoitu, integroitu muuhun ohjelmistoon ja viety tuotantoympäristöön.
