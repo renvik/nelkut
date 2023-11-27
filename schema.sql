@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS nelkut;
+DROP DATABASE IF EXISTS nelkut, nelkut_tests;
 
 CREATE DATABASE nelkut;
 \c nelkut;
@@ -46,8 +46,9 @@ CREATE TABLE books (
     user_id INTEGER REFERENCES users
 );
 
-
-CREATE TABLE inproceedings_test (
+CREATE DATABASE nelkut_tests;
+\c nelkut_tests;
+CREATE TABLE inproceedings (
     id SERIAL PRIMARY KEY,
     cite_id TEXT UNIQUE,
     author TEXT,
@@ -59,7 +60,7 @@ CREATE TABLE inproceedings_test (
     user_id INTEGER REFERENCES users
 );
 
-CREATE TABLE articles_test (
+CREATE TABLE articles (
     id SERIAL PRIMARY KEY,
     cite_id TEXT UNIQUE,
     author TEXT,
