@@ -1,15 +1,6 @@
 
 from sqlalchemy.sql import text
 
-def list_references(books, articles, inproceedings):
-    references = []
-    for i in books:
-        references.append(i)
-    for i in articles:
-        references.append(i)
-    for i in inproceedings:
-        references.append(i)
-    return references
 
 def list_books(db):
     sql = "SELECT * FROM books"
@@ -25,3 +16,9 @@ def list_inproceedings(db):
     sql = "SELECT * FROM inproceedings"
     inproceedings = db.session.execute(text(sql)).fetchall()
     return inproceedings
+
+def list_references(db):
+	books = list_books(db)
+	articles = list_articles(db)
+	inproceedings = list_inproceedings(db)
+	return books, articles, inproceedings

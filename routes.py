@@ -1,12 +1,14 @@
 from flask import request, redirect, render_template
 from app import app
-from reference_list import list_references, list_articles, list_books, list_inproceedings
+from reference_list import list_references
 import refservice
 from db import db
 
 @app.route("/")
 def index():
-	return render_template("index.html")
+	books, articles, inproceedings = list_references(db)
+	return render_template("index.html", books = books, articles = articles, inproceedings = inproceedings)
+
 
 @app.route("/add", methods=["GET"])
 def add():
@@ -42,10 +44,3 @@ def add_book():
 
 	return redirect("/")
 
-@app.route("/list")
-def list():
-	books = list_books(db)
-	articles = list_articles(db)
-	inproceedings = list_inproceedings(db)
-	references = list_references(books, articles, inproceedings)
-	return render_template("list_references.html" , references = references)

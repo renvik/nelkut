@@ -1,4 +1,67 @@
 <!DOCTYPE html>
 <a href="/add">Add new reference</a>
 <br><br>
-<a href="/list">References</a>
+<br>
+Books
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>Publisher</th>
+        <th>Pages</th>
+      </tr>
+{% for book in books %}
+    <tr>
+        <th>{{ book.title }}</a></th>
+        <th>{{ book.author }}</th>
+        <th>{{ book.year }}</th>
+        <th>{{ book.publisher}}</th>
+        <th>{{ book.start_page}}-{{ book.end_page }}</th>
+    </tr>
+{% endfor %}
+</table>
+
+<br>
+Articles
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Journal</th>
+        <th>Year</th>
+        <th>Volume</th>
+        <th>Pages</th>
+      </tr>
+{% for article in articles %}
+    <tr>
+        <th>{{ article.title }}</a></th>
+        <th>{{ article.author }}</th>
+        <th>{{ article.journal }}</th>
+        <th>{{ article.year }}</th>
+        <th>{{ article.volume }}</th>
+        <th>{{ article.start_page}}-{{ article.end_page }}</th>
+    </tr>
+{% endfor %}
+</table>
+
+<br>
+Inproceedings
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>Book title</th>
+        <th>Pages</th>
+      </tr>
+{% for inproceeding in inproceedings %}
+    <tr>
+        <th>{{ inproceeding.title }}</a></th>
+        <th>{{ inproceeding.author }}</th>
+        <th>{{ inproceeding.year }}</th>
+        <th>{{ inproceeding.booktitle}}</th>
+        <th>{{ inproceeding.start_page}}-{{ inproceeding.end_page }}</th>
+    </tr>
+{% endfor %}
+</table>
