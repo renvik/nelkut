@@ -4,70 +4,70 @@
 <br>
 Books
 <table>
-    <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Year</th>
-        <th>Publisher</th>
-        <th>Pages</th>
-      </tr>
+	<tr>
+		<th>ID</th>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Year</th>
+		<th>Publisher</th>
+		<th>Pages</th>
+	  </tr>
 {% for book in books %}
-    <tr>
-        <th>{{ book.cite_id }}</a></th>
-        <th>{{ book.title }}</a></th>
-        <th>{{ book.author }}</th>
-        <th>{{ book.year }}</th>
-        <th>{{ book.publisher}}</th>
-        <th>{{ book.start_page}}-{{ book.end_page }}</th>
-    </tr>
+	<tr>
+		<th>{{ book.cite_id }}</a></th>
+		<th>{{ book.title }}</a></th>
+		<th>{{ book.author }}</th>
+		<th>{{ book.year }}</th>
+		<th>{{ book.publisher}}</th>
+		<th>{{ book.start_page}}-{{ book.end_page }}</th>
+	</tr>
 {% endfor %}
 </table>
 
 <br>
 Articles
 <table>
-    <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Journal</th>
-        <th>Year</th>
-        <th>Volume</th>
-        <th>Pages</th>
-      </tr>
+	<tr>
+		<th>ID</th>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Journal</th>
+		<th>Year</th>
+		<th>Volume</th>
+		<th>Pages</th>
+	  </tr>
 {% for article in articles %}
-    <tr>
-        <th>{{ article.cite_id }}</a></th>
-        <th>{{ article.title }}</a></th>
-        <th>{{ article.author }}</th>
-        <th>{{ article.journal }}</th>
-        <th>{{ article.year }}</th>
-        <th>{{ article.volume }}</th>
-        <th>{{ article.start_page}}-{{ article.end_page }}</th>
-    </tr>
+	<tr>
+		<th>{{ article.cite_id }}</a></th>
+		<th>{{ article.title }}</a></th>
+		<th>{{ article.author }}</th>
+		<th>{{ article.journal }}</th>
+		<th>{{ article.year }}</th>
+		<th>{{ article.volume }}</th>
+		<th>{{ article.start_page}}-{{ article.end_page }}</th>
+	</tr>
 {% endfor %}
 </table>
 
 <br>
 Inproceedings
 <table>
-    <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Year</th>
-        <th>Book title</th>
-        <th>Pages</th>
-      </tr>
+	<tr>
+		<th>ID</th>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Year</th>
+		<th>Book title</th>
+		<th>Pages</th>
+	  </tr>
 {% for inproceeding in inproceedings %}
-    <tr>
-        <th>{{ inproceeding.cite_id }}</a></th>
-        <th>{{ inproceeding.title }}</a></th>
-        <th>{{ inproceeding.author }}</th>
-        <th>{{ inproceeding.year }}</th>
-        <th>{{ inproceeding.booktitle}}</th>
-        <th>{{ inproceeding.start_page}}-{{ inproceeding.end_page }}</th>
-    </tr>
+	<tr>
+		<th>{{ inproceeding.cite_id }}</a></th>
+		<th>{{ inproceeding.title }}</a></th>
+		<th>{{ inproceeding.author }}</th>
+		<th>{{ inproceeding.year }}</th>
+		<th>{{ inproceeding.booktitle}}</th>
+		<th>{{ inproceeding.start_page}}-{{ inproceeding.end_page }}</th>
+	</tr>
 {% endfor %}
 </table>
