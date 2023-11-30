@@ -20,7 +20,7 @@ jobs:
         run: pip install poetry
       - name: Install dependencies
         run: poetry install
-      - name: Init test database
-        run: poetry run psql < test_schema.sql
       - name: Run tests
+        env: # Set the secret as database address
+          secret: ${{secrets.TEST_DATABASE_ADDRESS}}
         run: poetry run coverage run --branch -m pytest
