@@ -2,12 +2,13 @@ import unittest
 import refservice
 from flask import Flask
 from db import db
+from os import getenv
 from flask_sqlalchemy import SQLAlchemy
 
 class RefServiceTest(unittest.TestCase):
     def setUp(self):
         self.app = Flask(__name__)
-        self.app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///nelkut_tests"
+        self.app.config["SQLALCHEMY_DATABASE_URI"] = getenv("DATABASE")
         self.db = db
 
     def test_lists_length(self):
