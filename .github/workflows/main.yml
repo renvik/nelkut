@@ -20,9 +20,7 @@ jobs:
         run: pip install poetry
       - name: Install dependencies
         run: poetry install
-      - name: enter venv
-        run: poetry shell
       - name: Init test database
-        run: psql < test_schema.sql
+        run: poetry run psql < test_schema.sql
       - name: Run tests
         run: poetry run coverage run --branch -m pytest
