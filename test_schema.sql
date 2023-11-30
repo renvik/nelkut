@@ -1,9 +1,7 @@
-\c template1
-
-DROP DATABASE IF EXISTS nelkut_tests;
-CREATE DATABASE nelkut_tests;
-
-\c nelkut_tests;
+DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS articles;
+DROP TABLE IF EXISTS inproceedings;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
 	id SERIAL PRIMARY KEY,

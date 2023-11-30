@@ -1,9 +1,7 @@
-\c template1
-
-DROP DATABASE IF EXISTS nelkut;
-CREATE DATABASE nelkut;
-
-\c nelkut;
+DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS articles;
+DROP TABLE IF EXISTS inproceedings;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
 	id SERIAL PRIMARY KEY,

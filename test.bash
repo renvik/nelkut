@@ -1,5 +1,7 @@
-DB_URL=postgresql:///nelkut_tests
+if [ -f .env.test ]; then
+	export $(grep -v '^#' .env.test | xargs)
+fi
 
-psql "$DB_URL" < test_schema.sql
+psql "$DATABASE" < test_schema.sql
 
 poetry run pytest
