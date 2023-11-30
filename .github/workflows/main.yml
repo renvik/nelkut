@@ -21,6 +21,6 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Run tests
-        env: # Set thee secret as database address
+        env: # Set theee secret as database address
           secret: ${{secrets.TEST_DATABASE_ADDRESS}}
         run: poetry run coverage run --branch -m pytest -s
