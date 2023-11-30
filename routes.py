@@ -1,8 +1,9 @@
-from flask import request, redirect, render_template
+from flask import request, redirect, render_template, send_from_directory
 from app import app
 import refservice
 from db import db
 from bibtex_creator import write_bibtex_file, sort_entries
+import os
 
 @app.route("/")
 def index():
@@ -47,5 +48,8 @@ def add_book():
 @app.route("/bibtex")
 def bibtex():
 	write_bibtex_file(sort_entries(), "bibtex.bib")
-	return redirect("/")
+	return redirect("/download")
 
+@app.route("/download")
+def download():
+	return send_from_directory(app.root_path, "bibtex.bib", as_attachment=True)
