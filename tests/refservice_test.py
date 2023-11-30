@@ -23,7 +23,7 @@ class RefServiceTest(unittest.TestCase):
         
         with self.app.app_context():
             self.db.init_app(self.app)
-            request = MockupRequest({"cite_id": "Some Cite id", 
+            request = MockupRequest({"cite_id": "abcdefghijk", 
                                      "author": "Some Author", 
                                      "title": "Some Title", 
                                      "year": 1, 
@@ -32,11 +32,13 @@ class RefServiceTest(unittest.TestCase):
                                      "end_page": 2})
             refservice.add_book_to_database(self.db, request)
             books = self.db.session.execute(text("SELECT * FROM books")).fetchall()
-            self.assertEqual(books, 1)
+            self.assertEqual(len(books), 3)
 
     def test_lists_length(self):
 
         with self.app.app_context():
             self.db.init_app(self.app)
             books, articles, inproceedings = refservice.list_references(self.db)
-            self.assertEqual(len(books)+len(articles)+len(inproceedings), 6)
+            self.assertEqual(len(books), 3)
+            self.assertEqual(len(articles), 2)
+            self.assertEqual(len(inproceedings), 2)
