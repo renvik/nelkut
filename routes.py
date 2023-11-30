@@ -1,12 +1,11 @@
 from flask import request, redirect, render_template
 from app import app
-from reference_list import list_references
 import refservice
 from db import db
 
 @app.route("/")
 def index():
-	books, articles, inproceedings = list_references(db)
+	books, articles, inproceedings = refservice.list_references(db)
 	return render_template("index.html", books = books, articles = articles, inproceedings = inproceedings)
 
 
