@@ -2,6 +2,7 @@ from flask import request, redirect, render_template
 from app import app
 import refservice
 from db import db
+from bibtex_creator import write_bibtex_file, sort_entries
 
 @app.route("/")
 def index():
@@ -41,5 +42,10 @@ def add_book():
 	# todo: add the stuff from request to the database
 	refservice.add_book_to_database(request)
 
+	return redirect("/")
+
+@app.route("/bibtex")
+def bibtex():
+	write_bibtex_file(sort_entries(), "bibtex.bib")
 	return redirect("/")
 
