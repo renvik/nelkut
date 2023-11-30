@@ -20,7 +20,7 @@ def add_inproceeding():
 		return render_template("add_inproceeding_reference.html")
 
 	# todo: add the stuff from request to the database
-	refservice.add_inproceeding_to_database(request)
+	refservice.add_inproceeding_to_database(db, request)
 
 	return redirect("/")
 
@@ -30,7 +30,7 @@ def add_article():
 		return render_template("add_article_reference.html")
 
 	# todo: add the stuff from request to the database
-	refservice.add_article_to_database(request)
+	refservice.add_article_to_database(db, request)
 
 	return redirect("/")
 
@@ -40,7 +40,7 @@ def add_book():
 		return render_template("add_book_reference.html")
 
 	# todo: add the stuff from request to the database
-	refservice.add_book_to_database(request)
+	refservice.add_book_to_database(db, request)
 
 	return redirect("/")
 

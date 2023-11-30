@@ -1,3 +1,5 @@
+\c template1
+
 DROP DATABASE IF EXISTS nelkut_tests;
 CREATE DATABASE nelkut_tests;
 

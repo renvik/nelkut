@@ -7,9 +7,10 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  show-secrets:
     runs-on: ubuntu-latest
-
+    env: # Set theee secret as database address
+        secret: ${{secrets.TEST_DATABASE_ADDRESS}}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3.10
@@ -21,4 +22,4 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Run tests
-        run: poetry run coverage run --branch -m pytest
+        run: poetry run coverage run --branch -m pytest -s
