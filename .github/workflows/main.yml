@@ -29,6 +29,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install postgresql-client
 
+      - name: Make Bash script executable
+        run: chmod +x reset_test_db.bash
+
       - name: Run tests
         env:
           DATABASE: ${{secrets.TEST_DATABASE_ADDRESS}}

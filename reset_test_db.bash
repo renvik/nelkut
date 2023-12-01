@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -f .env.test ]; then
 	export $(grep -v '^#' .env.test | xargs)
 fi
