@@ -2,6 +2,7 @@
 ![GHA workflow badge](https://github.com/EeroAnt/nelkut/workflows/CI/badge.svg)
 
 [![codecov](https://codecov.io/gh/EeroAnt/nelkut/graph/badge.svg?token=QIODCMQO6O)](https://codecov.io/gh/EeroAnt/nelkut)
+
 Ryhmä 4 OhTu miniprojekti
 # Backlog
 
