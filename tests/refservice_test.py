@@ -5,6 +5,7 @@ from db import db
 from os import getenv
 from sqlalchemy.sql import text
 import subprocess
+import platform
 
 class MockupRequest:
     def __init__(self, form):
@@ -25,7 +26,10 @@ class RefServiceTest(unittest.TestCase):
         self.app.config["SQLALCHEMY_DATABASE_URI"] = getenv("DATABASE")
         self.db = db
 
-        subprocess.call("bash ./reset_test_db.bash")
+        if platform.system() == "Windows":
+            subprocess.call("bash reset_test_db.bash")
+        else:
+            subprocess.call("./reset_test_db.bash")
 
         with self.app.app_context():
             self.db.init_app(self.app)
