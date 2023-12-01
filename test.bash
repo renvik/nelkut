@@ -4,4 +4,5 @@ fi
 
 psql "$DATABASE" < test_schema.sql
 
-poetry run pytest
+poetry run coverage run --branch -m pytest -s
+poetry run coverage html
