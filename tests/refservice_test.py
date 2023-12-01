@@ -3,7 +3,6 @@ import refservice
 from flask import Flask
 from db import db
 from os import getenv
-from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import text
 
 class MockupRequest:
