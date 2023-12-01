@@ -29,7 +29,7 @@ class RefServiceTest(unittest.TestCase):
         if platform.system() == "Windows":
             subprocess.call("bash reset_test_db.bash")
         else:
-            subprocess.call("./reset_test_db.bash")
+            subprocess.call("reset_test_db.bash")
 
         with self.app.app_context():
             self.db.init_app(self.app)
