@@ -25,7 +25,7 @@ class RefServiceTest(unittest.TestCase):
         self.app.config["SQLALCHEMY_DATABASE_URI"] = getenv("DATABASE")
         self.db = db
 
-        subprocess.call("bash reset_test_db.bash")
+        subprocess.call("bash ./reset_test_db.bash")
 
         with self.app.app_context():
             self.db.init_app(self.app)
