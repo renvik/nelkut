@@ -3,4 +3,4 @@ if [ -f .env.test ]; then
 fi
 
 chmod +x reset_test_db.bash
-poetry run coverage run --branch -m pytest -s
+poetry run coverage run --branch -m pytest
