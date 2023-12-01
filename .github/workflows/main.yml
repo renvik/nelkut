@@ -10,16 +10,29 @@ jobs:
   show-secrets:
     runs-on: ubuntu-latest
     env: # Set theee secret as database address
-        secret: ${{secrets.TEST_DATABASE_ADDRESS}}
+      DATABASE: ${{secrets.TEST_DATABASE_ADDRESS}}
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
+
       - name: Install Poetry
         run: pip install poetry
+
       - name: Install dependencies
         run: poetry install
+
+      - name: Set up PostgreSQL
+        run: |
+          sudo apt-get install postgresql-client
+
+      - name: Connect to PostgreSQL
+        run: |
+          psql -c 'SELECT version();'
+
       - name: Run tests
         run: ./test.bash
