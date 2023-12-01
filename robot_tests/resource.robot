@@ -7,7 +7,7 @@ ${SERVER}  nelkut.fly.dev
 ${DELAY}  0.5 seconds
 ${HOME_URL}  http://${SERVER}
 ${ADD_URL}  http://${SERVER}/add
-# ${REGISTER_URL}  http://${SERVER}/register
+${INPROCEEDING_URL}  http://${SERVER}/add_inproceeding
 
 *** Keywords ***
 Open And Configure Browser
@@ -29,5 +29,11 @@ Home Page Should Be Open
 
 Add Page Should Be Open
     Title Should Be  New Reference
+
+#Add Inproceeding Page Should Be Open
+    #Title Should Be  New Reference
+
+#Add Article Page Should Be Open
+    #Title 
 
 

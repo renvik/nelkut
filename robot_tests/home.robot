@@ -10,6 +10,11 @@ Click Link Add
     Click Link  Add new reference
     Add Page Should Be Open
 
+# *** Test Cases ***
+# Click Link Add Inproceeding
+#     Click Link  Add a reference to an inproceeding
+#     Add Inproceeding Page Should Be Open
+
 
 *** Keywords ***
 Go To Main Page
