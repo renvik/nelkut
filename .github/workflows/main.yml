@@ -7,11 +7,9 @@ on:
     branches: [main]
 
 jobs:
-  show-secrets:
+  build:
     runs-on: ubuntu-latest
-    env: # Set theee secret as database address
-      DATABASE: ${{secrets.TEST_DATABASE_ADDRESS}}
-
+    
     steps:
       - uses: actions/checkout@v4
 
