@@ -35,6 +35,12 @@ jobs:
           DATABASE_URL: ${{secrets.TEST_DATABASE_ADDRESS}}
         run: ./test.bash
 
+      - name: Coverage report
+        run: poetry run coverage xml
+
+      - name: Coverage report to Codecov
+        run: bash <(curl -s https://codecov.io/bash)
+
       - name: Setup chromedriver
         uses: nanasess/setup-chromedriver@master
   robot_test:
