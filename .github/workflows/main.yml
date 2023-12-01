@@ -32,7 +32,7 @@ jobs:
 
       - name: Connect to PostgreSQL
         run: |
-          psql -c 'SELECT version();'
+          start-pg.sh
 
       - name: Run tests
         run: ./test.bash
