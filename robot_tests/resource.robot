@@ -30,10 +30,12 @@ Home Page Should Be Open
 Add Page Should Be Open
     Title Should Be  New Reference
 
-#Add Inproceeding Page Should Be Open
-    #Title Should Be  New Reference
+Add Inproceeding Page Should Be Open
+    Title Should Be  New Reference
 
-#Add Article Page Should Be Open
-    #Title 
+Add Article Page Should Be Open
+    Title Should Be  New Reference
 
+Add Book Page Should Be Open
+    Title Should Be  New Reference
 
