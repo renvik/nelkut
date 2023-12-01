@@ -14,9 +14,6 @@ class RefServiceTest(unittest.TestCase):
     def setUp(self):
         self.app = Flask(__name__)
         self.app.config["SQLALCHEMY_DATABASE_URI"] = getenv("DATABASE")
-        print("Tämän alla pitäisi olla jotian")
-        print(self.app.config["SQLALCHEMY_DATABASE_URI"])
-        print("tämän yllä pitisi olla jotain")
         self.db = db
     
     def test_add_book_to_database(self):
