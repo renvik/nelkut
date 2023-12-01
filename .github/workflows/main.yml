@@ -28,11 +28,10 @@ jobs:
 
       - name: Set up PostgreSQL
         run: |
+          sudo apt-get update
           sudo apt-get install postgresql-client
 
-      - name: Connect to PostgreSQL
-        run: |
-          start-pg.sh
-
       - name: Run tests
+        env: DATABASE: ${{secrets.TEST_DATABASE_ADDRESS}}
+        env: DATABASE_URL: ${{secrets.TEST_DATABASE_ADDRESS}}
         run: ./test.bash
