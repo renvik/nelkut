@@ -1,36 +1,44 @@
 from sqlalchemy.sql import text
+from flask import session
 
-def __insert(db, table_name, keys, request):
+def __insert(db, table_name, keys, request, user_id):
 	colon = ':'
-	sql = text(f"INSERT INTO {table_name} ({', '.join(keys)}) VALUES ({', '.join(colon + key for key in keys)})")
-	db.session.execute(sql, {key: request.form[key] for key in keys})
+	sql = text(f"INSERT INTO {table_name} ({', '.join(keys)}, user_id) VALUES ({', '.join(colon + key for key in keys)}, :user_id)")
+	keys_dict = {key: request.form[key] for key in keys}
+	keys_dict["user_id"] = user_id
+	db.session.execute(sql, keys_dict)
 	db.session.commit()
 
-def add_inproceeding_to_database(db, request):
-	keys = ["cite_id", "author", "title", "year", "booktitle", "start_page", "end_page", "user_id"]
-	check_users_cite_id_duplicate(request.form["cite_id"], request.form["user_id"], db)
+def add_inproceeding_to_database(db, request, user_name):
+	keys = ["cite_id", "author", "title", "year", "booktitle", "start_page", "end_page"]
+	user_id = check_and_fetch_users_cite_id_duplicate(request.form["cite_id"], user_name, db)
+	if user_id:
+		__insert(db, "inproceedings", keys, request, user_id)
+	# TODO error handling
 
-	__insert(db, "inproceedings", keys, request)
+def add_article_to_database(db, request, user_name):
+	keys = ["cite_id", "author", "title", "journal", "year", "volume", "start_page", "end_page"]
+	user_id = check_and_fetch_users_cite_id_duplicate(request.form["cite_id"], user_name, db)
+	if user_id:
+		__insert(db, "articles", keys, request, user_id)
+	# TODO error handling
 
-def add_article_to_database(db, request):
-	keys = ["cite_id", "author", "title", "journal", "year", "volume", "start_page", "end_page", "user_id"]
-	check_users_cite_id_duplicate(request.form["cite_id"], request.form["user_id"], db)
+def add_book_to_database(db, request, user_name):
+	keys = ["cite_id", "author", "title", "year", "publisher", "start_page", "end_page"]
+	user_id = check_and_fetch_users_cite_id_duplicate(request.form["cite_id"], user_name, db)
+	if user_id:
+		__insert(db, "books", keys, request, user_id)
+	# TODO error handling
 
-	__insert(db, "articles", keys, request)
-
-def add_book_to_database(db, request):
-	keys = ["cite_id", "author", "title", "year", "publisher", "start_page", "end_page", "user_id"]
-	check_users_cite_id_duplicate(request.form["cite_id"], request.form["user_id"], db)
-
-	__insert(db, "books", keys, request)
-
-def check_users_cite_id_duplicate(cite_id, user_id, db):
+def check_and_fetch_users_cite_id_duplicate(cite_id, username, db):
+	sql = "SELECT id FROM users WHERE username=:username"
+	user_id = db.session.execute(text(sql), {"username":username}).fetchone()[0]
 	for i in ["books", "articles", "inproceedings"]:
 		sql = f"SELECT * FROM {i} WHERE cite_id=:cite_id AND user_id=:user_id"
 		check = db.session.execute(text(sql), {"cite_id":cite_id,"user_id":user_id}).fetchall()
-		if not check:
+		if check:
 			return False
-	return True
+	return user_id
 
 def list_books(db):
 	sql = "SELECT * FROM books"

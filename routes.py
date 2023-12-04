@@ -1,4 +1,4 @@
-from flask import request, redirect, render_template, send_from_directory
+from flask import request, redirect, render_template, send_from_directory, session
 from app import app
 import refservice
 from db import db
@@ -19,9 +19,9 @@ def add():
 def add_inproceeding():
 	if request.method == "GET":
 		return render_template("add_inproceeding_reference.html")
-
+	user_name = session["username"]
 	# todo: add the stuff from request to the database
-	refservice.add_inproceeding_to_database(db, request)
+	refservice.add_inproceeding_to_database(db, request, user_name)
 
 	return redirect("/")
 
