@@ -18,6 +18,7 @@ INSERT INTO articles (cite_id, author, title, journal, year, volume, start_page,
 INSERT INTO articles (cite_id, author, title, journal, year, volume, start_page, end_page)  VALUES ('test_id_4', 'test_4_author', 'test_4_title', 'test_4_journal', 1, 2, 1, 2);
 INSERT INTO books (cite_id, author, title, year, publisher, start_page, end_page)  VALUES ('test_id_5', 'test_5_author', 'test_5_title', 1, 'test_5_publisher', 1, 2);
 INSERT INTO books (cite_id, author, title, year, publisher, start_page, end_page)  VALUES ('test_id_6', 'test_6_author', 'test_6_title', 1, 'test_6_publisher', 1, 2);
+INSERT INTO users (username, password) VALUES ('test_user', 'test_password');
 """
 
 class RefServiceTest(unittest.TestCase):
