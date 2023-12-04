@@ -42,7 +42,7 @@ def article_to_bibtex(article):
     return entry
 
 def inproceeding_to_bibtex(inproceeding):
-    entry = '@inproceeding{'
+    entry = '@inproceedings{'
     entry += inproceeding.cite_id + ',\n'
     entry += '  author = {' + inproceeding.author + '},\n'
     entry += '  title = {' + inproceeding.title + '},\n'
