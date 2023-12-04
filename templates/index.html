@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <title>Index</title>
+
+<!-- Tämä väliaikainen ratkaisu, että näkee onko sisäänkirjautunut -->
+{% if session.user_id %}
+
+You are logged in.
+<a href="/logout">Kirjaudu ulos</a>
+{% else %}
+<a href="/login">Kirjaudu sisään</a>
+
+{% endif %}
+
+
+
 <a href="/add">Add new reference</a>
 <a href="/bibtex">Download BibTex file</a>
 <br><br>
