@@ -46,7 +46,8 @@ class RefServiceTest(unittest.TestCase):
                                      "year": 1, 
                                      "publisher": "Some Publisher", 
                                      "start_page": 1, 
-                                     "end_page": 2})
+                                     "end_page": 2,
+                                     "user_id": 1})
             refservice.add_book_to_database(self.db, request)
             books = refservice.list_books(self.db)
             self.assertEqual(len(books), initial_amount + 1)
@@ -62,7 +63,8 @@ class RefServiceTest(unittest.TestCase):
                                     "year": 1, 
                                     "volume": 2, 
                                     "start_page": 3, 
-                                    "end_page": 4})
+                                    "end_page": 4,
+                                    "user_id": 1})
             refservice.add_article_to_database(self.db, request)
             articles = refservice.list_articles(self.db)
             self.assertEqual(len(articles), initial_amount + 1)
@@ -77,7 +79,8 @@ class RefServiceTest(unittest.TestCase):
                                     "year": 1, 
                                     "booktitle": "sapjdajd", 
                                     "start_page": 2, 
-                                    "end_page": 3})
+                                    "end_page": 3,
+                                    "user_id": 1})
             refservice.add_inproceeding_to_database(self.db, request)
             inproceedings = refservice.list_inproceedings(self.db)
             self.assertEqual(len(inproceedings), initial_amount + 1)
