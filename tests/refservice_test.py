@@ -1,10 +1,6 @@
 import unittest
 import refservice
-from init_test import init_test
-
-class MockupRequest:
-	def __init__(self, form):
-		self.form = form
+from test_util import init_test, MockupRequest
 
 init_sql = """
 INSERT INTO inproceedings (cite_id, author, title, year, booktitle, start_page, end_page)  VALUES ('test_id_1', 'test_1_author', 'test_1_title', 1, 'test_1_booktitle', 1, 2);
