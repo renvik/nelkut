@@ -5,6 +5,10 @@ from flask_sqlalchemy import SQLAlchemy
 import subprocess
 import platform
 
+class MockupRequest:
+	def __init__(self, form):
+		self.form = form
+
 def init_test(init_sql=None):
 	app = Flask(__name__)
 	app.config["SQLALCHEMY_DATABASE_URI"] = getenv("DATABASE")
