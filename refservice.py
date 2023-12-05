@@ -6,8 +6,11 @@ def __insert(db, table_name, keys, request, user_id):
 	sql = text(f"INSERT INTO {table_name} ({', '.join(keys)}, user_id) VALUES ({', '.join(colon + key for key in keys)}, :user_id)")
 	keys_dict = {key: request.form[key] for key in keys}
 	keys_dict["user_id"] = user_id
-	db.session.execute(sql, keys_dict)
-	db.session.commit()
+	try: 
+		db.session.execute(sql, keys_dict)
+		db.session.commit()
+	except Exception as e:
+		print(f"Error inserting data into database: {e}")
 
 def add_inproceeding_to_database(db, request, user_id):
 	keys = ["cite_id", "author", "title", "year", "booktitle", "start_page", "end_page"]
