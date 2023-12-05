@@ -19,3 +19,5 @@ Määritellään valmiiksi tehty tarkoittamaan sitä, että vaatimus on analysoi
 # Lisenssi
 
 [LICENSE](https://github.com/EeroAnt/nelkut/blob/main/LICENSE)-tiedostosta löytyy tarkemmat tiedot lisenssioikeuksista ja -rajoituksista (MIT)
+
+
