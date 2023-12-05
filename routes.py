@@ -20,9 +20,9 @@ def add():
 def add_inproceeding():
 	if request.method == "GET":
 		return render_template("add_inproceeding_reference.html")
-	user_name = session["username"]
+	user_id = session["user_id"]
 	# todo: add the stuff from request to the database
-	refservice.add_inproceeding_to_database(db, request, user_name)
+	refservice.add_inproceeding_to_database(db, request, user_id)
 
 	return redirect("/")
 
